@@ -1,0 +1,18 @@
+player.onChat("#help", function() {
+    player.tell(mobs.target(TargetSelectorKind.LocalPlayer), `Icd Agent::Miner instructions
+    Hello ${player.name()}!
+    Commands list (all args are numbers):
+    #bring [dir] - Brings agent to your position, dir being a number denoting a compass direction
+    #shaft [depth] - mines a shaft down`)
+})
+
+player.onChat("#bring", function(dir) {
+    agent.teleportToPlayer()
+    agent.turn(dir)
+})
+
+player.onChat("#shaft", function(depth) {
+    let agentPos = agent.getPosition()
+    agent.move(SixDirection.Down, depth)
+    shapes.line(Block.Air, agentPos.move(CardinalDirection.Down, 1), agentPos.move(CardinalDirection.Down, depth))
+})
