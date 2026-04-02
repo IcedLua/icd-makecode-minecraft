@@ -7,7 +7,7 @@ player.onChat("#help", function() {
     Hello ${player.name()}!
     Commands list (all args are numbers):
     #bring [dir] - Brings agent to your position, dir being a number denoting a compass direction
-    #shaft [depth] [size] - mines a shaft down, DOES NOT DROP BLOCKS`)
+    #shaft [depth] [size] - mines a shaft down`)
 })
 
 player.onChat("#bring", function(dir) {
@@ -62,3 +62,6 @@ player.onChat("#shaft", function (depth, size) {
         agent.turnRight()
     }
 })
+
+// Initalization?
+tellOwner("Icd Agent::Miner is ready!")
