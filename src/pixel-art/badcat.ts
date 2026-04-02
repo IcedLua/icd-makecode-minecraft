@@ -1,4 +1,10 @@
-// 
+player.onChat("#help", function() {
+    tellOwner(`Icd Agent::PixelArt instructions
+    Hello ${player.name()}!
+    Commands list (all args are numbers):
+    #draw - Draws a cool little cat at the player pos.`)
+})
+
 player.onChat("#draw", function() {
     pixelArt.drawImage(img`
     . . . . . . . . . . . . . . . .
