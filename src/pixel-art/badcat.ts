@@ -1,3 +1,7 @@
+function tellOwner(text: string) {
+    player.tell(mobs.target(TargetSelectorKind.LocalPlayer), text)
+}
+
 player.onChat("#help", function() {
     tellOwner(`Icd Agent::PixelArt instructions
     Hello ${player.name()}!
